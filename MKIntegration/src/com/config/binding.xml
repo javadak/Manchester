@@ -1,0 +1,19 @@
+<binding name="binding" package="com.main" trim-whitespace="true">
+  <mapping class="com.main.ForecastRequest" name="forecastRequest">
+    <value style="element" name="timeWindow" get-method="getTimeWindow" set-method="setTimeWindow"/>
+  </mapping>
+  <mapping class="com.main.ForecastResponse" name="forecastResponse">
+    <collection get-method="getLinkList" set-method="setLinkList" create-type="java.util.ArrayList">
+      <structure type="com.main.ForecastResponse$Link" name="link">
+        <value style="element" name="id" get-method="getId" set-method="setId"/>
+        <collection get-method="getIntervalList" set-method="setIntervalList" create-type="java.util.ArrayList">
+          <structure type="com.main.ForecastResponse$Link$Interval" name="interval">
+            <value style="element" name="timeStart" get-method="getTimeStart" set-method="setTimeStart"/>
+            <value style="element" name="timeStop" get-method="getTimeStop" set-method="setTimeStop"/>
+            <value style="element" name="travelTime" get-method="getTravelTime" set-method="setTravelTime"/>
+          </structure>
+        </collection>
+      </structure>
+    </collection>
+  </mapping>
+</binding>
